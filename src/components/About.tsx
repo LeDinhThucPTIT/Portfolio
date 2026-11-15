@@ -1,27 +1,27 @@
-import { motion, type Variants } from 'framer-motion';
-import { FiTarget, FiHeart, FiTrendingUp } from 'react-icons/fi';
-import { personalInfo, techTags } from '../data/mockData';
+import { motion, type Variants } from "framer-motion";
+import { FiTarget, FiHeart, FiTrendingUp } from "react-icons/fi";
+import { personalInfo, techTags } from "../data/mockData";
 
 const fadeUp: Variants = {
   hidden: { opacity: 0, y: 32 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: 'easeOut' } },
+  show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
 };
 
 const highlights = [
   {
     icon: FiHeart,
-    title: 'Đam mê',
-    text: 'Yêu thích biến ý tưởng thiết kế thành giao diện sống động, mượt mà và có hồn.',
+    title: "Đam mê",
+    text: "Yêu thích biến ý tưởng thiết kế thành giao diện sống động, mượt mà và có hồn.",
   },
   {
     icon: FiTrendingUp,
-    title: 'Kinh nghiệm',
-    text: '3+ năm làm việc với các sản phẩm SaaS, e-commerce và dashboard dữ liệu.',
+    title: "Kinh nghiệm",
+    text: "Thực hành phát triển ứng dụng web qua các dự án học tập và cá nhân với MERN Stack, Spring Boot và FastAPI.",
   },
   {
     icon: FiTarget,
-    title: 'Mục tiêu',
-    text: 'Trở thành Frontend Architect, dẫn dắt các hệ thống giao diện quy mô lớn.',
+    title: "Mục tiêu",
+    text: "Trở thành Fullstack Developer có khả năng xây dựng và triển khai ứng dụng web hoàn chỉnh, dễ sử dụng và dễ bảo trì.",
   },
 ];
 
@@ -38,8 +38,7 @@ export default function About() {
         >
           <p className="eyebrow mb-4">Về mình</p>
           <h2 className="text-3xl font-extrabold tracking-tight text-ink-900 sm:text-4xl dark:text-white">
-            Kết hợp kỹ thuật vững vàng
-            <br /> với con mắt thẩm mỹ tinh tế
+            Phát triển ứng dụng từ giao diện đến backend
           </h2>
         </motion.div>
 
@@ -53,7 +52,10 @@ export default function About() {
             className="space-y-6"
           >
             {personalInfo.aboutParagraphs.map((p, i) => (
-              <p key={i} className="text-lg leading-relaxed text-ink-600 dark:text-ink-300">
+              <p
+                key={i}
+                className="text-lg leading-relaxed text-ink-600 dark:text-ink-300"
+              >
                 {p}
               </p>
             ))}
@@ -102,7 +104,9 @@ export default function About() {
                   <Icon size={22} />
                 </div>
                 <div>
-                  <h3 className="mb-1 font-semibold text-ink-900 dark:text-white">{title}</h3>
+                  <h3 className="mb-1 font-semibold text-ink-900 dark:text-white">
+                    {title}
+                  </h3>
                   <p className="text-sm leading-relaxed text-ink-600 dark:text-ink-300">
                     {text}
                   </p>

@@ -1,6 +1,9 @@
 import { motion, type Variants } from 'framer-motion';
 import {
   SiJavascript,
+  SiPython,
+  SiCplusplus,
+  SiFastapi,
   SiTypescript,
   SiHtml5,
   SiCss,
@@ -15,11 +18,16 @@ import {
   SiFigma,
 } from 'react-icons/si';
 import { FiLayers } from 'react-icons/fi';
+import { FaJava } from 'react-icons/fa';
 import type { IconType } from 'react-icons';
 import { skills, type Skill } from '../data/mockData';
 
 const iconMap: Record<string, IconType> = {
   javascript: SiJavascript,
+  java: FaJava,
+  python: SiPython,
+  cpp: SiCplusplus,
+  fastapi: SiFastapi,
   typescript: SiTypescript,
   html5: SiHtml5,
   css3: SiCss,

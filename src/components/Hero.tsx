@@ -1,13 +1,17 @@
-import { useEffect, useState } from 'react';
-import { motion, type Variants } from 'framer-motion';
-import { FiArrowDown, FiMail } from 'react-icons/fi';
-import { personalInfo } from '../data/mockData';
+import { useEffect, useState } from "react";
+import { motion, type Variants } from "framer-motion";
+import { FiArrowDown, FiMail } from "react-icons/fi";
+import { personalInfo } from "../data/mockData";
 
-const ROLES = ['Frontend Developer', 'ReactJS & UI/UX', 'Xây dựng sản phẩm số'];
+const ROLES = [
+  "Fullstack Developer",
+  "ReactJS & UI/UX",
+  "API và cơ sở dữ liệu",
+];
 
 /** Subtle typing/erasing loop across a small list of role strings. */
 function useTypingEffect(words: string[], typingSpeed = 70, pause = 1600) {
-  const [text, setText] = useState('');
+  const [text, setText] = useState("");
   const [wordIndex, setWordIndex] = useState(0);
   const [deleting, setDeleting] = useState(false);
 
@@ -17,17 +21,19 @@ function useTypingEffect(words: string[], typingSpeed = 70, pause = 1600) {
 
     if (!deleting && text === current) {
       timeout = setTimeout(() => setDeleting(true), pause);
-    } else if (deleting && text === '') {
+    } else if (deleting && text === "") {
       setDeleting(false);
       setWordIndex((i) => i + 1);
     } else {
       timeout = setTimeout(
         () => {
           setText((t) =>
-            deleting ? current.slice(0, t.length - 1) : current.slice(0, t.length + 1)
+            deleting
+              ? current.slice(0, t.length - 1)
+              : current.slice(0, t.length + 1),
           );
         },
-        deleting ? typingSpeed / 2 : typingSpeed
+        deleting ? typingSpeed / 2 : typingSpeed,
       );
     }
 
@@ -46,7 +52,7 @@ const container: Variants = {
 
 const item: Variants = {
   hidden: { opacity: 0, y: 24 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: 'easeOut' } },
+  show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
 };
 
 export default function Hero() {
@@ -103,18 +109,24 @@ export default function Hero() {
             className="mt-14 flex items-center gap-8 text-ink-500 dark:text-ink-400"
           >
             <div>
-              <p className="text-2xl font-bold text-ink-900 dark:text-white">3+</p>
-              <p className="text-sm">Năm kinh nghiệm</p>
+              <p className="text-2xl font-bold text-ink-900 dark:text-white">
+                3.2
+              </p>
+              <p className="text-sm">GPA</p>
             </div>
             <div className="h-8 w-px bg-ink-200 dark:bg-white/10" />
             <div>
-              <p className="text-2xl font-bold text-ink-900 dark:text-white">20+</p>
+              <p className="text-2xl font-bold text-ink-900 dark:text-white">
+                6+
+              </p>
               <p className="text-sm">Dự án hoàn thành</p>
             </div>
             <div className="h-8 w-px bg-ink-200 dark:bg-white/10" />
             <div>
-              <p className="text-2xl font-bold text-ink-900 dark:text-white">98%</p>
-              <p className="text-sm">Khách hàng hài lòng</p>
+              <p className="text-2xl font-bold text-ink-900 dark:text-white">
+                2023
+              </p>
+              <p className="text-sm">Bắt đầu lập trình</p>
             </div>
           </motion.div>
         </motion.div>
@@ -123,20 +135,25 @@ export default function Hero() {
         <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.8, delay: 0.3, ease: 'easeOut' }}
+          transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
           className="relative mx-auto hidden aspect-square w-full max-w-md lg:block"
         >
           <div className="absolute inset-6 rounded-[2.5rem] bg-gradient-to-br from-primary-500 to-primary-700 opacity-90 shadow-glow" />
           <motion.img
             animate={{ y: [0, -14, 0] }}
-            transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut' }}
+            transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
             src="https://images.unsplash.com/photo-1568602471122-7832951cc4c5?q=80&w=800&auto=format&fit=crop"
             alt={`Ảnh đại diện của ${personalInfo.name}`}
             className="relative h-full w-full rounded-[2.5rem] object-cover shadow-card-hover ring-1 ring-white/20"
           />
           <motion.div
             animate={{ y: [0, -10, 0] }}
-            transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut', delay: 0.5 }}
+            transition={{
+              duration: 5,
+              repeat: Infinity,
+              ease: "easeInOut",
+              delay: 0.5,
+            }}
             className="card-surface absolute -bottom-6 -left-8 flex items-center gap-3 px-4 py-3"
           >
             <span className="flex h-2.5 w-2.5 rounded-full bg-emerald-500" />

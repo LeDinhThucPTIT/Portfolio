@@ -1,10 +1,11 @@
-import { FiGithub, FiLinkedin, FiTwitter, FiArrowUp } from 'react-icons/fi';
-import { personalInfo } from '../data/mockData';
+import { FiGithub, FiLinkedin, FiTwitter, FiArrowUp } from "react-icons/fi";
+import { personalInfo } from "../data/mockData";
+import { FaFacebook } from "react-icons/fa";
 
 const socialLinks = [
-  { icon: FiGithub, href: personalInfo.social.github, label: 'GitHub' },
-  { icon: FiLinkedin, href: personalInfo.social.linkedin, label: 'LinkedIn' },
-  { icon: FiTwitter, href: personalInfo.social.twitter, label: 'Twitter' },
+  { icon: FiGithub, href: personalInfo.social.github, label: "GitHub" },
+  { icon: FiLinkedin, href: personalInfo.social.linkedin, label: "LinkedIn" },
+  { icon: FaFacebook, href: personalInfo.social.faFacebook, label: "Facebook" },
 ];
 
 export default function Footer() {
@@ -14,7 +15,8 @@ export default function Footer() {
     <footer className="border-t border-ink-100 py-10 dark:border-white/10">
       <div className="container-app flex flex-col items-center justify-between gap-6 sm:flex-row">
         <p className="text-sm text-ink-500 dark:text-ink-400">
-          © {year} {personalInfo.name}. Được xây dựng bằng React &amp; TailwindCSS.
+          © {year} {personalInfo.name}. Được xây dựng bằng React &amp;
+          TailwindCSS.
         </p>
 
         <div className="flex items-center gap-3">

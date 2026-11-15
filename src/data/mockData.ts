@@ -1,8 +1,10 @@
 // ============================================================================
 // Mock data — replace with your own content.
-// This file is the single source of truth for Projects, Skills, and Blog
+// This file is the single source of truth for Projects and Skills
 // sections. Edit the arrays below; no other files need to change.
 // ============================================================================
+
+import type { FaFacebook } from "react-icons/fa";
 
 export interface Project {
   id: string;
@@ -18,17 +20,8 @@ export interface Project {
 export interface Skill {
   name: string;
   icon: string; // key into the iconMap in Skills.tsx
-  category: 'Languages' | 'Frameworks' | 'Tools' | 'Design';
+  category: "Languages" | "Frameworks" | "Tools" | "Design";
   level?: number; // 0-100, optional proficiency bar
-}
-
-export interface BlogPost {
-  id: string;
-  title: string;
-  excerpt: string;
-  date: string;
-  readTime: string;
-  tag: string;
 }
 
 // ----------------------------------------------------------------------------
@@ -36,72 +29,95 @@ export interface BlogPost {
 // ----------------------------------------------------------------------------
 export const projects: Project[] = [
   {
-    id: 'proj-01',
-    title: 'Nimbus — Analytics Dashboard',
+    id: "neuralstore",
+    githubUrl: "https://github.com/LeDinhThucPTIT/E-Shop",
+    liveUrl: "https://e-shop-iota-two.vercel.app/",
+    title: "NEURALSTORE — Website thương mại điện tử",
     description:
-      'Bảng điều khiển phân tích dữ liệu thời gian thực với biểu đồ tương tác, bộ lọc linh hoạt và chế độ dark mode. Tối ưu hiệu năng cho tập dữ liệu lớn bằng virtualization.',
-    image:
-      'https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1200&auto=format&fit=crop',
-    tags: ['React', 'TypeScript', 'TailwindCSS', 'Recharts', 'Zustand'],
-    liveUrl: 'https://example.com/nimbus',
-    githubUrl: 'https://github.com/yourusername/nimbus-dashboard',
+      "Website bán hàng với giao diện khách hàng và trang quản trị, hỗ trợ quản lý sản phẩm theo SKU, giỏ hàng, đặt hàng và thống kê doanh thu. Tích hợp MoMo sandbox, xử lý tồn kho và chống tạo đơn trùng.",
+    image: "/images/projects/imageprj1.png",
+    tags: [
+      "React",
+      "TypeScript",
+      "Tailwind CSS",
+      "Zustand",
+      "Node.js",
+      "Express",
+      "MongoDB",
+    ],
     featured: true,
   },
   {
-    id: 'proj-02',
-    title: 'Driftly — E-commerce Storefront',
+    id: "FindJob",
+    githubUrl: "https://github.com/LeDinhThucPTIT/FindJob",
+    liveUrl: "https://find-job-ashy.vercel.app/",
+    title: "Find Job — Nền tảng tuyển dụng tích hợp AI",
     description:
-      'Giao diện thương mại điện tử hiện đại với giỏ hàng động, thanh toán mượt mà và animation chuyển trang. Điểm Lighthouse Performance 98/100.',
-    image:
-      'https://images.unsplash.com/photo-1523275335684-37898b6baf30?q=80&w=1200&auto=format&fit=crop',
-    tags: ['Next.js', 'TypeScript', 'Stripe', 'Framer Motion'],
-    liveUrl: 'https://example.com/driftly',
-    githubUrl: 'https://github.com/yourusername/driftly-store',
+      "Kết nối ứng viên và nhà tuyển dụng với chức năng tìm việc, ứng tuyển và quản lý hồ sơ. Hỗ trợ tạo CV, xuất PDF và phân tích mức độ phù hợp giữa CV với mô tả công việc bằng Gemini AI.",
+    image: "./images/projects/imageprj2.png",
+    tags: ["React", "Ant Design", "Node.js", "Express", "MongoDB", "Gemini AI"],
+  },
+  {
+    id: "bookapp",
+    githubUrl: "https://github.com/LeDinhThucPTIT/BookApp",
+    title: "BookApp — Nền tảng đọc sách và truyện",
+    description:
+      "Nền tảng đọc PDF và truyện theo chương, hỗ trợ đồng bộ tiến độ, ghi chú và tô sáng. Tích hợp Gemini để hỏi đáp, tóm tắt nội dung sách và đọc văn bản tiếng Việt bằng Edge TTS.",
+    image: "/images/projects/imageprj3.png",
+    tags: [
+      "React",
+      "FastAPI",
+      "MySQL",
+      "SQLAlchemy Async",
+      "Redis",
+      "Gemini API",
+      "Playwright",
+    ],
     featured: true,
   },
   {
-    id: 'proj-03',
-    title: 'Pulse — Task Collaboration App',
+    id: "grammar-quest",
+    githubUrl: "https://github.com/MinhNguyen592005/EnglishWeb",
+    title: "Grammar Quest — Website học ngữ pháp tiếng Anh",
     description:
-      'Ứng dụng quản lý công việc theo thời gian thực cho nhóm nhỏ, hỗ trợ kéo-thả Kanban, bình luận trực tiếp và thông báo tức thời qua WebSocket.',
-    image:
-      'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=1200&auto=format&fit=crop',
-    tags: ['React', 'Redux Toolkit', 'Socket.io', 'TailwindCSS'],
-    liveUrl: 'https://example.com/pulse',
-    githubUrl: 'https://github.com/yourusername/pulse-tasks',
+      "Phụ trách frontend và backend WebSocket cho nền tảng học ngữ pháp. Xây dựng giao diện học tập, quản lý lớp và đồng bộ thời gian thực cho đấu PvP, kiểm tra trực tiếp và thông báo.",
+    image: "/images/projects/imageprj4.png",
+    tags: [
+      "React",
+      "TypeScript",
+      "Tailwind CSS",
+      "Java",
+      "Spring Boot",
+      "WebSocket",
+    ],
     featured: true,
   },
+
   {
-    id: 'proj-04',
-    title: 'Vantage — SaaS Landing Page',
+    id: "smart-classroom",
+    githubUrl: "https://github.com/LeDinhThucPTIT/Smart-classroom-LDT",
+    title: "Smart Classroom — Quản lý lớp học thông minh",
     description:
-      'Landing page tốc độ cao cho sản phẩm SaaS với hiệu ứng scroll-reveal, form đăng ký tích hợp và tối ưu SEO chuẩn Core Web Vitals.',
-    image:
-      'https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1200&auto=format&fit=crop',
-    tags: ['Vite', 'React', 'Framer Motion', 'SEO'],
-    liveUrl: 'https://example.com/vantage',
-    githubUrl: 'https://github.com/yourusername/vantage-landing',
+      "Hệ thống quản lý phòng học, thiết bị và điểm danh bằng nhận diện khuôn mặt. Cập nhật dữ liệu cảm biến theo thời gian thực, cảnh báo theo ngưỡng và kiểm soát truy cập theo phòng, lớp.",
+    image: "/images/projects/imageprj5.png",
+    tags: [
+      "React",
+      "Node.js",
+      "Express",
+      "MongoDB",
+      "FastAPI",
+      "MQTT",
+      "Socket.IO",
+    ],
   },
   {
-    id: 'proj-05',
-    title: 'Ledger — Personal Finance Tracker',
+    id: "badminton-court",
+    githubUrl: "https://github.com/IamNatsu705/BTL_OOP_PTIT",
+    title: "Hệ thống quản lý sân cầu lông",
     description:
-      'Ứng dụng theo dõi chi tiêu cá nhân với biểu đồ ngân sách trực quan, phân loại giao dịch tự động và xuất báo cáo PDF.',
-    image:
-      'https://images.unsplash.com/photo-1554224155-6726b3ff858f?q=80&w=1200&auto=format&fit=crop',
-    tags: ['React', 'TypeScript', 'Chart.js', 'IndexedDB'],
-    githubUrl: 'https://github.com/yourusername/ledger-finance',
-  },
-  {
-    id: 'proj-06',
-    title: 'Kōan — Design System',
-    description:
-      'Bộ thư viện component có thể tái sử dụng, được viết tài liệu bằng Storybook, hỗ trợ theming linh hoạt cho nhiều sản phẩm nội bộ.',
-    image:
-      'https://images.unsplash.com/photo-1618788372246-79faff0c3742?q=80&w=1200&auto=format&fit=crop',
-    tags: ['React', 'Storybook', 'TailwindCSS', 'Radix UI'],
-    liveUrl: 'https://example.com/koan',
-    githubUrl: 'https://github.com/yourusername/koan-design-system',
+      "Ứng dụng quản lý sân cầu lông, hỗ trợ xem lịch trống, đặt sân theo khung giờ và quản lý lịch đặt. Xây dựng giao diện với JavaScript, Tailwind CSS và backend bằng Spring Boot.",
+    image: "/images/projects/imageprj6.png",
+    tags: ["JavaScript", "Tailwind CSS", "Java", "Spring Boot"],
   },
 ];
 
@@ -109,90 +125,62 @@ export const projects: Project[] = [
 // Skills
 // ----------------------------------------------------------------------------
 export const skills: Skill[] = [
-  { name: 'JavaScript', icon: 'javascript', category: 'Languages', level: 95 },
-  { name: 'TypeScript', icon: 'typescript', category: 'Languages', level: 92 },
-  { name: 'HTML5', icon: 'html5', category: 'Languages', level: 98 },
-  { name: 'CSS3 / Sass', icon: 'css3', category: 'Languages', level: 95 },
+  { name: "JavaScript", icon: "javascript", category: "Languages", level: 95 },
+  { name: "TypeScript", icon: "typescript", category: "Languages", level: 92 },
+  { name: "HTML5", icon: "html5", category: "Languages", level: 98 },
+  { name: "CSS3 / Sass", icon: "css3", category: "Languages", level: 95 },
+  { name: "Java", icon: "java", category: "Languages", level: 95 },
+  { name: "Python", icon: "python", category: "Languages", level: 95 },
+  { name: "C/C++", icon: "cpp", category: "Languages" },
 
-  { name: 'React', icon: 'react', category: 'Frameworks', level: 96 },
-  { name: 'Next.js', icon: 'nextjs', category: 'Frameworks', level: 88 },
-  { name: 'TailwindCSS', icon: 'tailwind', category: 'Frameworks', level: 94 },
-  { name: 'Framer Motion', icon: 'framer', category: 'Frameworks', level: 85 },
+  { name: "React", icon: "react", category: "Frameworks", level: 96 },
+  { name: "Next.js", icon: "nextjs", category: "Frameworks", level: 88 },
+  { name: "TailwindCSS", icon: "tailwind", category: "Frameworks", level: 94 },
+  { name: "Spring boot", icon: "spring", category: "Frameworks", level: 85 },
+  { name: "FastAPI", icon: "fastapi", category: "Frameworks" },
 
-  { name: 'Git & GitHub', icon: 'git', category: 'Tools', level: 90 },
-  { name: 'Vite', icon: 'vite', category: 'Tools', level: 90 },
-  { name: 'Docker', icon: 'docker', category: 'Tools', level: 70 },
-  { name: 'Vitest / Jest', icon: 'vitest', category: 'Tools', level: 80 },
+  { name: "Git & GitHub", icon: "git", category: "Tools", level: 90 },
+  { name: "Vite", icon: "vite", category: "Tools", level: 90 },
+  { name: "Docker", icon: "docker", category: "Tools", level: 70 },
+  { name: "Vitest / Jest", icon: "vitest", category: "Tools", level: 80 },
 
-  { name: 'Figma', icon: 'figma', category: 'Design', level: 88 },
-  { name: 'Design Systems', icon: 'design', category: 'Design', level: 82 },
-];
-
-// ----------------------------------------------------------------------------
-// Blog (optional section — mock content)
-// ----------------------------------------------------------------------------
-export const blogPosts: BlogPost[] = [
-  {
-    id: 'post-01',
-    title: 'Xây dựng Animation mượt mà với Framer Motion',
-    excerpt:
-      'Những kỹ thuật thực tế để tạo hiệu ứng chuyển động mượt, nhẹ và có chủ đích trong giao diện React.',
-    date: '12 Th6 2026',
-    readTime: '6 phút đọc',
-    tag: 'Animation',
-  },
-  {
-    id: 'post-02',
-    title: 'Thiết kế hệ thống màu sáng cho sản phẩm SaaS',
-    excerpt:
-      'Cách chọn bảng màu sáng chuyên nghiệp, đảm bảo độ tương phản và khả năng mở rộng cho dark mode.',
-    date: '28 Th5 2026',
-    readTime: '5 phút đọc',
-    tag: 'UI/UX',
-  },
-  {
-    id: 'post-03',
-    title: 'Tối ưu hiệu năng React với Vite',
-    excerpt:
-      'Các mẹo giảm thời gian build, code-splitting hợp lý và tối ưu bundle size cho ứng dụng React quy mô vừa.',
-    date: '03 Th5 2026',
-    readTime: '7 phút đọc',
-    tag: 'Performance',
-  },
+  { name: "Figma", icon: "figma", category: "Design", level: 88 },
+  { name: "Design Systems", icon: "design", category: "Design", level: 82 },
 ];
 
 // ----------------------------------------------------------------------------
 // Personal info / social links — edit these to your own details
 // ----------------------------------------------------------------------------
 export const personalInfo = {
-  name: 'Nguyễn Minh Anh',
-  title: 'Frontend Developer',
-  subtitle: 'ReactJS & UI/UX',
+  name: "Lê Đình Thức",
+  title: "Fullstack Developer",
+  subtitle: "ReactJS & UI/UX",
   tagline:
-    'Mình xây dựng giao diện web nhanh, gọn gàng và dễ sử dụng — nơi chi tiết nhỏ tạo nên trải nghiệm lớn.',
+    "Mình xây dựng ứng dụng web với MERN Stack và đang tìm cơ hội Intern / Fresher Fullstack Developer.",
   aboutParagraphs: [
-    'Mình là một Frontend Developer với hơn 3 năm kinh nghiệm xây dựng sản phẩm web bằng React và TypeScript. Mình đam mê việc biến các thiết kế phức tạp thành giao diện mượt mà, dễ tiếp cận và hiệu năng cao.',
-    'Mình tin rằng một giao diện tốt là sự kết hợp giữa thẩm mỹ và kỹ thuật — nơi từng khoảng cách, từng hiệu ứng chuyển động đều có mục đích rõ ràng. Mục tiêu nghề nghiệp của mình là trở thành một Frontend Architect, dẫn dắt các dự án có ảnh hưởng lớn đến trải nghiệm người dùng.',
+    "Mình là Lê Đình Thức, lập trình viên định hướng Fullstack, tập trung vào MERN Stack. Mình cũng học và thực hành xây dựng backend với Spring Boot, FastAPI và làm việc với cơ sở dữ liệu MySQL.",
+    "Qua các dự án học tập và cá nhân, mình rèn luyện cách kết nối giao diện với API, tổ chức dữ liệu và xử lý lỗi. Mình đang tìm cơ hội Intern / Fresher để tham gia phát triển sản phẩm thực tế và học hỏi từ đội ngũ.",
   ],
-  email: 'hello@yourname.dev',
-  location: 'Hà Nội, Việt Nam',
+  email: "ledinhthucptit@gmail.com",
+  location: "Hà Nội, Việt Nam",
   social: {
-    github: 'https://github.com/yourusername',
-    linkedin: 'https://linkedin.com/in/yourusername',
-    twitter: 'https://twitter.com/yourusername',
+    github: "https://github.com/LeDinhThucPTIT",
+    linkedin:
+      "https://www.linkedin.com/in/%C4%91%C3%ACnh-th%E1%BB%A9c-l%C3%AA-b5112142b/",
+    faFacebook: "https://www.facebook.com/ledinhthuc07072005",
   },
-  cvUrl: '/cv.pdf',
+  cvUrl: "/cv.pdf",
 };
 
 export const techTags = [
-  'React',
-  'TypeScript',
-  'Next.js',
-  'TailwindCSS',
-  'Framer Motion',
-  'Redux',
-  'Vite',
-  'Node.js',
-  'GraphQL',
-  'Figma',
+  "React",
+  "TypeScript",
+  "Node.js",
+  "TailwindCSS",
+  "FastAPI",
+  "Redux",
+  "Vite",
+  "Spring Boot",
+  "MySQL",
+  "Figma",
 ];
