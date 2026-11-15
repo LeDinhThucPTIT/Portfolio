@@ -1,4 +1,4 @@
-import { FiGithub, FiLinkedin, FiTwitter, FiArrowUp } from "react-icons/fi";
+import { FiGithub, FiLinkedin, FiArrowUp } from "react-icons/fi";
 import { personalInfo } from "../data/mockData";
 import { FaFacebook } from "react-icons/fa";
 

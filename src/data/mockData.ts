@@ -4,7 +4,6 @@
 // sections. Edit the arrays below; no other files need to change.
 // ============================================================================
 
-import type { FaFacebook } from "react-icons/fa";
 
 export interface Project {
   id: string;
