@@ -168,7 +168,7 @@ export const personalInfo = {
       "https://www.linkedin.com/in/%C4%91%C3%ACnh-th%E1%BB%A9c-l%C3%AA-b5112142b/",
     faFacebook: "https://www.facebook.com/ledinhthuc07072005",
   },
-  cvUrl: "/cv.pdf",
+  cvUrl: "/CV/Le_Dinh_Thuc_Backend_Developer_Intern.pdf",
 };
 
 export const techTags = [

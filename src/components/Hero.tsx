@@ -142,7 +142,7 @@ export default function Hero() {
           <motion.img
             animate={{ y: [0, -14, 0] }}
             transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-            src="https://images.unsplash.com/photo-1568602471122-7832951cc4c5?q=80&w=800&auto=format&fit=crop"
+            src="/images/me/image.png"
             alt={`Ảnh đại diện của ${personalInfo.name}`}
             className="relative h-full w-full rounded-[2.5rem] object-cover shadow-card-hover ring-1 ring-white/20"
           />
