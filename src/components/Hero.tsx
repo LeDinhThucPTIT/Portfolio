@@ -144,7 +144,7 @@ export default function Hero() {
             transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
             src="/images/me/image.png"
             alt={`Ảnh đại diện của ${personalInfo.name}`}
-            className="relative h-full w-full rounded-[2.5rem] object-cover object-top shadow-card-hover ring-1 ring-white/20"
+            className="relative h-full w-full rounded-[2.5rem] object-cover object-[center_20%] shadow-card-hover ring-1 ring-white/20"
           />
           <motion.div
             animate={{ y: [0, -10, 0] }}
